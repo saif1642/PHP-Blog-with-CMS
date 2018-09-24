@@ -17,6 +17,23 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+                                    <?php
+                                         if(isset($_POST['submit'])){
+                                             $cat_title = $_POST['cat_title'];
+                                             if($cat_title=="" || empty($cat_title)){
+                                                 echo "<label class='control-label' for='inputWarning'>This Field is required</label>";
+                                             }else{
+                                                 $insert_query = "INSERT INTO category(cat_title)";
+                                                 $insert_query.= "VALUE('{$cat_title}')";
+                                                 $execute_insert_query = mysqli_query($con,$insert_query);
+                                                 if(!$execute_insert_query){
+                                                     die('QUERY FAILED'.mysqli_error($con));
+                                                 }
+                                             }
+                                         }
+                                    
+                                    
+                                    ?>
                                     <form role="form" action="" method="post">
                                         <div class="form-group">
                                             <label>Add Category</label>
