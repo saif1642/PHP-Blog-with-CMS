@@ -62,7 +62,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Categories</a>
+                            <a href="categories.php"><i class="fa fa-table fa-fw"></i> Categories</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Comments</a>
