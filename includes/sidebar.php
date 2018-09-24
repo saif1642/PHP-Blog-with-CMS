@@ -16,35 +16,24 @@
   </div>
 </div>
 
+<?php
+   $cat_query = "SELECT * FROM category LIMIT 3";
+   $execute_query = mysqli_query($con,$cat_query);
+?>
+
 <!-- Categories Widget -->
 <div class="card my-4">
   <h5 class="card-header">Categories</h5>
   <div class="card-body">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-12">
         <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#">Web Design</a>
-          </li>
-          <li>
-            <a href="#">HTML</a>
-          </li>
-          <li>
-            <a href="#">Freebies</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6">
-        <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#">JavaScript</a>
-          </li>
-          <li>
-            <a href="#">CSS</a>
-          </li>
-          <li>
-            <a href="#">Tutorials</a>
-          </li>
+          <?php
+            while($row = mysqli_fetch_assoc($execute_query)){
+              $cat_title = $row['cat_title'];
+              echo "<li ><a href='#'>{$cat_title}</a></li>";
+            }
+          ?>
         </ul>
       </div>
     </div>
