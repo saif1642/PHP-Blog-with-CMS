@@ -1,4 +1,7 @@
-<?php include("../../includes/db.php"); ?>
+<?php 
+include("../../includes/db.php");
+ob_start();        
+?>
 
 <!DOCTYPE html>
 <html lang="en">
