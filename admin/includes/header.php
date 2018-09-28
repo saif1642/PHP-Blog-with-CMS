@@ -1,5 +1,6 @@
 <?php 
 include("../../includes/db.php");
+include("../functions.php");
 ob_start();        
 ?>
 
