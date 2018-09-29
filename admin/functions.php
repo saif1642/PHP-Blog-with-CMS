@@ -17,6 +17,7 @@
         }
     }
   }
+
   function delete_categories(){
     global $con;
        //Delete Category
@@ -28,6 +29,7 @@
        }
     
   }
+  
   function find_and_displayAllcategories(){
     global $con;
       $cat_query = "SELECT * FROM category";
@@ -43,6 +45,33 @@
         } 
   }
 
+  function displayAllPost(){
+      global $con;
+      $post_query = "SELECT * FROM posts";
+      $execute_post_query = mysqli_query($con,$post_query);
+      while($row = mysqli_fetch_assoc($execute_post_query)){
+          $post_id = $row['post_id'];
+          $post_cat_id = $row['post_cat_id'];
+          $post_title = $row['post_title'];
+          $post_author = $row['post_author'];
+          $post_date = $row['post_date'];
+          $post_image = $row['post_image'];
+          $post_tags = $row['post_tags'];
+          $post_comment_count = $row['post_comment_count'];
+          $post_status = $row['post_status'];
+          echo "<tr>";
+          echo "<td>{$post_id}</td>";
+          echo "<td>{$post_author}</td>";
+          echo "<td>{$post_title}</td>";
+          echo "<td>{$post_cat_id}</td>";
+          echo "<td>{$post_status}</td>";
+          echo "<td><img width='50px' src='../../images/{$post_image}'></td>";
+          echo "<td>{$post_tags}</td>";
+          echo "<td>{$post_comment_count}</td>";
+          echo "<td>{$post_date}</td>";
+          echo "</tr>";
 
+      }
+    }
 
 ?>

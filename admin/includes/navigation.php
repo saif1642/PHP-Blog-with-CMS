@@ -56,7 +56,7 @@
                                     <a href="flot.html">Add Post</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">View all Post</a>
+                                    <a href="post.php">View all Post</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
